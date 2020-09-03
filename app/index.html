@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="aveApp">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="content-type" content="text/html">
+	<meta http-equiv="content-language" content="pl">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="author" content="Sylwia Iwaniuk">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular-route.min.js"></script>
+	
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="home-page/home-page.module.js"></script>
+    <script src="home-page/home-page.component.js"></script>
+    <script src="home-page/home-banner.component.js"></script>
+	
+	<!--<script type="text/javascript" language="javascript" src="scripts.js"></script> -->
+	<title> Avenue Fashion </title>
+	<link rel="stylesheet" href="style-core.css">
+	<!--<link rel="stylesheet" href="style-tablet.css">
+	<link rel="stylesheet" href="style-mobile.css">-->
+	<style type="text/css">
+	</style>
+</head>
+<body>
+
+<header>
+<div id="topbar_bgr">
+	<div id="topbar_box">
+		<div class="left"> Currency: GBP <div class="arrow_down"></div> </div>
+		
+		<div id="cart""> 
+			<img src="img/cart.png" alt="shopping cart">
+			<span id="cart_label">empty</span>
+			<img src="img/arrow_down_white.png" alt="white arrow">
+			
+			<div id="sub_cart">
+				<h3> Your cart is empty </h3>
+			</div>
+		</div>
+		
+		<div class="right"> Sign In </div>
+		<div class="right"> Register </div>
+	</div>
+</div>
+
+<div id="header_box">
+	<div class="left" id="brand_logo"> <a href="#"><span class="bold">Avenue</span> Fashion</a> </div>
+	
+	<nav class="right">
+		<ul class="left">
+			<li class="menu_block"> <span class="menu_text"><span>Mens</span> <br> <div class="arrow_down"></div></span>
+				<div class="sub_nav">
+					<div class="column">
+						<h3> Casuals </h3>
+						<ul>
+							<li> Jackets </li>
+							<li> Hoodies & Sweatshirts </li>
+							<li> Pole Shirts </li>
+							<li> Sportswear </li>
+							<li> Trousers & Chinos </li>
+							<li> T-Shirts </li>
+						</ul>
+					</div>
+					<div class="column">
+						<h3> Formal </h3>
+						<ul>
+							<li> Jackets </li>
+							<li> Shirts </li>
+							<li> Suits </li>
+							<li> Trousers </li>
+						</ul>
+					</div>
+					
+					<div class="cleaner"></div>
+					<div class="banner">
+						<span class="bold"> Autumn sale! </span><br>
+						Up to 50% off
+					</div>
+				</div>
+			</li>
+			
+			<li class="menu_block"> <span class="menu_text"><span>Womens</span> <br> <div class="arrow_down"></div></span>
+				<div class="sub_nav">
+					<div class="column">
+						<h3> Casuals </h3>
+						<ul>
+							<li> Jackets </li>
+							<li> Hoodies & Sweatshirts </li>
+							<li> Pole Shirts </li>
+							<li> Sportswear </li>
+							<li> Trousers & Chinos </li>
+							<li> T-Shirts </li>
+						</ul>
+					</div>
+					<div class="column">
+						<h3> Formal </h3>
+						<ul>
+							<li> Jackets </li>
+							<li> Shirts </li>
+							<li> Suits </li>
+							<li> Trousers </li>
+						</ul>
+					</div>
+					
+					<div class="cleaner"></div>
+					<div class="banner">
+						<span class="bold"> Autumn sale! </span><br>
+						Up to 50% off
+					</div>
+				</div>
+			</li>
+			
+			<li class="menu_block"> <span class="menu_text"><span>The Brand</span></span> </li>
+			
+			<li class="menu_block"> <span class="menu_text"><span>Local Stores</span> <br> <div class="arrow_down"></div></span>
+				<div class="sub_nav">
+					<div class="column">
+						<h3> Check out your store </h3>
+						<ul>
+							<li> London </li>
+							<li> New York </li>
+							<li> Warsaw </li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			
+			<li class="menu_block"> 
+				<span class="menu_text">Lookbook</span> <br> 
+				<div class="arrow_down"></div>
+				
+				<div class="sub_nav">
+					<div class="column">
+						<h3> Your Lookbook </h3>
+						<ul>
+							<li> View </li>
+							<li> Manage </li>
+						</ul>
+					</div>
+					<div class="column">
+						<h3> See also </h3>
+						<ul>
+							<li> Men's Lookbook </li>
+							<li> Women's Lookbook </li>
+							<li> Some celebrity's Lookbook </li>
+							<li> Another celebrity's Lookbook </li>
+						</ul>
+					</div>
+				</div>
+			</li>
+		<div class="cleaner"></div>
+		</ul>
+	
+		<div class="right" id="search_box">
+			<input type="text" placeholder="Search..." id="search"> 
+			<img src="img/search.png" alt="search">
+		</div>
+	</nav>
+</div>
+<div class="cleaner"></div>
+</header>
+
+<main ng-view></main>
+
+<footer>
+<div id="footer_bgr">
+	<div id="footer_box">
+		<nav>
+			<div class="column">
+				<h3> Information </h3>
+				<ul>
+					<li> The brand </li>
+					<li> Local stores </li>
+					<li> Customer service </li>
+					<li> Privacy & cookies </li>
+					<li> Site map </li>
+				</ul>
+			</div>
+			<div class="column">
+				<h3> Why buy from us </h3>
+				<ul>
+					<li> Shipping & returns </li>
+					<li> Secure shopping </li>
+					<li> Testimanials </li>
+					<li> Award winning </li>
+					<li> Ethical trading </li>
+				</ul>
+			</div>
+			<div class="column">
+				<h3> Your account </h3>
+				<ul>
+					<li> Sign in </li>
+					<li> Register </li>
+					<li> View cart </li>
+					<li> View your lookbook </li>
+					<li> Track an order </li>
+					<li> Update information </li>
+				</ul>
+			</div>
+			<div class="column">
+				<h3> Lookbook </h3>
+				<ul>
+					<li> Latest posts </li>
+					<li> Men's lookbook </li>
+					<li> Women's lookbook </li>
+					<li> Lookbooks RSS feed </li>
+					<li> View your lookbook </li>
+					<li> Delete your lookbook </li>
+				</ul>
+			</div>
+			<div class="column">
+				<h3> Contact details </h3>
+				<p>
+					Head Office: Avenue Fashion, <br>
+					180-182 Regent Street, London. <br>
+					<br>
+				</p>
+				<p> Telephone: 0123-456-789 </p>
+				<p> Email: support@yourwebsite.com </p>
+			</div>
+		<div class="cleaner"></div>
+		</nav>
+		
+		<div>
+			<div class="banner" id="banner_awards">
+				<span class="bold"> Award Winner </span><br>
+				Fashion Awards 2016
+			</div>
+			<div class="banner" id="banner_social">
+				<img src="img/icon_facebook.png" alt="Facebook">
+				<img src="img/icon_twitter.png" alt="Twitter">
+				<img src="img/icon_instagram.png" alt="Instagram">
+				<img src="img/icon_pinterest.png" alt="Pinterest">
+			</div>
+		</div>
+	<div class="cleaner"></div>
+	</div>
+<div>
+
+<div id="copyright_bgr">
+	<div id="copyright_box">
+		<div class="left"> &copy; 2016 Avenue Fashion &trade; </div>
+		<div class="right">	Coded by <a href="mailto: siwaniuk@op.pl">Sylwia Iwaniuk</a> </div>
+		<div class="right">	Design by <a href="http://robbydesigns.com/">RobbyDesigns.com</a> </div>
+	</div>
+	<div class="cleaner"></div>
+</div>
+</footer>
+
+</body>
+</html>
+
+<script type="text/javascript" language="javascript">
+<!-- 
+
+
+
+-->
+</script>

@@ -1,0 +1,225 @@
+/* CSS file */
+
+/* -----------------------------
+	- general
+	- header - top bar & menu
+	- footer - nav, info & copyright
+----------------------------- */
+
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+	body { 
+		margin: 0; padding: 0; 
+		background: #fff; color: #727272; 
+		font-family: Roboto, sans-serif; font-size: 14px; 
+	  }
+	.cleaner { width: 0; height: 0; margin: 0; padding: 0; clear: both; }
+	
+	div, p, ul, ol, li, h1, h2, h3, header, main, footer { margin: 0; padding: 0; }
+	#topbar_box, #header_box, #footer_box, #copyright_box { margin: 0 auto; padding: 0; }
+	
+	main { position: relative; }
+	
+	a { color: #727272; text-decoration: none; }
+		a:hover { color: #00c8c8; }
+	ul { list-style-type: none; }
+	
+	.left { float: left; }
+	.right { float: right; }
+	
+	.bold { font-weight: bold; }
+	
+	
+	.arrow_down {
+		width: 8px; height: 7px; 
+		background: url("img/arrow_down_grey.png") no-repeat center top;
+		display: inline-block; vertical-align: middle;
+	  }
+	
+	.column { width: 210px; margin-left: 30px; float: left; }
+	
+		.column h3 { 
+			margin-bottom: 20px; 
+			color: #575153;
+			font-family: Montserrat; font-size: 12px;
+			text-transform: uppercase; 
+		  }
+	
+		.column li { padding: 7px 0; }
+
+		.column p { margin: 7px 0; }
+	
+	
+	.banner {
+		width: 570px; height: 200px; 
+		padding: 60px 50px; text-align: center; 
+		background: #333333; color: #fff; 
+		font-family: Montserrat; font-size: 36px; 
+		text-transform: uppercase;
+	  }
+	
+/* ------------------------------------------------------------
+							header 
+------------------------------------------------------------ */
+	
+		/* ----------------- top bar ----------------- */
+
+	#topbar_bgr { background: #333333; }
+	#topbar_box { width: 1170px; height: 45px; }
+	
+		#topbar_box .left, #topbar_box .right { padding: 14px 0; }
+	
+		#topbar_box .right { margin-left: 35px; }
+		
+			#topbar_box .arrow_down { margin: 0 5px; }
+		
+			#cart { 
+				cursor: pointer;
+				float: right; position: relative;
+				width: 150px; height: 45px;
+				margin-left: 60px; padding: 14px 0;
+				background: #00c8c8; color: #fff; 
+				text-align: center; 
+			  }
+				#cart:hover #sub_cart { display: block; }
+			
+				#cart img { display: inline; vertical-align: middle; }
+				#cart #cart_label { 
+					display: inline-block;
+					width: 60px; 
+					margin: 0 3px;
+					text-align: right;
+				  }
+				
+				
+				#sub_cart {
+					width: 300px;
+					background: #f8f8f8;
+					padding: 30px;
+					position: absolute;
+					right: 0; top: 45px;
+					z-index: 20;
+					display: none; 
+				  }
+				
+					#sub_cart h3 { 
+						color: #575153;
+						font-family: Montserrat; font-size: 12px;
+						text-transform: uppercase; 
+					  }
+				
+					#sub_cart li { padding: 7px 0; }
+
+
+		/* --------------- header box --------------- */
+
+	#header_box { width: 90%; min-width: 1170px; margin: 0 auto; }
+
+
+		/* ------------------ logo ------------------ */
+	
+	#header_box #brand_logo { 
+		margin-top: 35px; margin-left: 20px;
+		color: #000;
+		font-family: Montserrat; font-size: 22px; 
+		font-weight: 600;
+		text-transform: uppercase;
+	  }
+	
+		#brand_logo a { color: #000; }
+		
+		
+		/* ------------------ menu ------------------ */
+	
+	#header_box nav { margin-top: 45px; margin-right: 20px; }
+		
+		#header_box nav .menu_block { 		/* li */
+			cursor: pointer;
+			float: left;
+			position: relative; 
+			margin: 0 15px; padding: 0 10px;
+		  }
+			#header_box nav .menu_block:hover .menu_text { color: #00c8c8; }
+			#header_box nav .menu_block:hover .arrow_down {
+				background-image: url("img/arrow_down_turq.png");
+			  }	
+			#header_box nav .menu_block:hover .sub_nav { display: block; }
+	
+			#header_box nav .menu_block .menu_text { 
+				color: #000;
+				font-family: Montserrat; font-weight: bold;
+				text-transform: uppercase;
+			  }
+			#header_box nav .menu_block .arrow_down { margin: 7px 0 10px; }	
+			  
+			#header_box nav .sub_nav {		/* li div */
+				cursor: auto;
+				background: #f8f8f8;
+				padding: 30px; padding-top: 10px;
+				position: absolute;
+				left: -5px;
+				z-index: 10;
+				display: none; 
+			  }
+			
+				#header_box .sub_nav .column { 	/* li div div */
+					width: 205px; 
+					margin-left: 0; 
+				  }
+					
+					#header_box .sub_nav .column h3 { 
+						margin-top: 20px; 
+					  }
+			
+				#header_box .sub_nav .banner { 
+					clear: both;
+					width: 410px; height: 200px;
+					margin-top: 50px; 
+				  }
+
+			  
+		/* --------------- search bar --------------- */
+		
+		#header_box #search_box { 
+			width: 180px;
+			margin-left: 40px;
+			text-align: right; 
+		  }
+
+			#header_box #search_box input { 
+				width: 150px; 
+				border: none; 
+				color: #727272; 
+				padding: 3px 4px;
+			  }
+
+			#header_box #search_box img { 
+				display: inline; vertical-align: middle;
+			  }
+	
+/* ------------------------------------------------------------
+							footer 
+------------------------------------------------------------ */
+	
+	#footer_bgr { background: #f8f8f8; }
+	#footer_box { width: 1170px; padding: 60px 0; }
+		
+		footer nav { margin-bottom: 50px; }
+		
+			footer nav :first-child { margin-left: 0; }
+		
+			#banner_awards { float: left; }
+			
+			#banner_social { background: #00c8c8; color: #fff; float: right; }
+			
+				#banner_social img { cursor: pointer; margin: 23px 27px 0; }
+
+
+		/* ---------------- copyright ---------------- */
+	
+	#copyright_bgr { background: #333333; }
+	#copyright_box { width: 1170px; height: 45px; padding: 15px 0; }
+	
+		#copyright_box .right { margin-left: 35px; }
+	
