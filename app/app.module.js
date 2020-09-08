@@ -1,5 +1,9 @@
 angular.module('aveApp', [
 	'ngRoute',
-	'homePage'
+	'ngSanitize',
+	'homepageBanner',
+	'homepage',
+	'subpageBanner',
+	'productPage'
   ]);
 

@@ -1,0 +1,143 @@
+<div id="product_page">
+
+
+	<div id="big_image_box">
+		<div id="slider_content">
+			<div ng-repeat="image in $ctrl.product.img" class="slider_image_box">
+				<img ng-src="{{ image }}">
+			</div>
+		</div>
+		<div class="slider_arrow" id="slider_arrow_left" ng-click="$ctrl.slideImage('left')"> < </div>
+		<div class="slider_arrow" id="slider_arrow_right" ng-click="$ctrl.slideImage('right')"> > </div>
+	</div>
+	
+	
+	
+	<div id="product_details">
+		<h2> {{ $ctrl.product.name }} </h2>
+		
+		<div id="product_socials">
+			<div class="star_rating" id="product_rating">
+				<div ng-style="{'width': ($ctrl.product.rating*20)+'%'}"></div>
+				<img src="img/star_rating.png">
+			</div>
+			
+			<span class="inline_element semibold dark"><a ng-click="$ctrl.setDesc('reviews'); $ctrl.scrollTo('more_info')">{{ $ctrl.product.reviews.length + " Review" }}<span ng-if="$ctrl.product.reviews.length!=1">s</span></a> </span>
+			| <span class="inline_element semibold dark"><a>Add a Review</a></span> | 
+			<span class="inline_element dark">
+				Share: 
+				<img src="img/icon_facebook_small.png" alt="share on Facebook">
+				<img src="img/icon_twitter_small.png" alt="share on Twitter">
+				<img src="img/icon_gplus_small.png" alt="share on Google Plus">
+				<img src="img/icon_pinterest_small.png" alt="share on Pinterest">
+				<img src="img/icon_instagram_small.png" alt="share on Instagram">
+				<img src="img/icon_mail_small.png" alt="share via mail">
+			</span>
+		</div>
+		
+		<div id="product_prices">
+			<span ng-if="$ctrl.product.discounted" class="previous_price"> 
+				<span class="currency" ng-if="$parent.$parent.currency=='GBP'">&pound;</span>
+				<span class="currency" ng-if="$parent.$parent.currency=='USD'">$</span>
+					{{ $parent.$ctrl.product.previous_price[$parent.$parent.currency] }}
+			</span> 
+			<span class="currency" ng-if="$parent.currency=='GBP'">&pound;</span>
+			<span class="currency" ng-if="$parent.currency=='USD'">$</span>
+				{{ $ctrl.product.price[$parent.currency] }}
+		</div>
+		
+		<div id="product_specs">
+			<p> 
+				<span class="semibold upper dark">Availability:</span> {{ $ctrl.product.availability }} 
+			</p>
+			<p>
+				<span class="semibold upper dark">Product code:</span> {{ $ctrl.product.product_code }} 
+			</p>
+			<p>
+				<span class="semibold upper dark">Tags:</span> <span class="colored" ng-repeat="tag in $ctrl.product.tags"> {{ tag }}, </span> 
+			</p>
+		</div>
+		
+		<div id="short_desc" ng-bind-html="$ctrl.product.short_desc"></div>
+		
+		<div id="product_options">
+			<div class="product_option">
+				<span class="semibold upper dark"> Colour </span> <br> 
+				<select class="selector" id="selected_colour">
+				  <option ng-repeat="colour in $ctrl.product.colours" value="{{colour}}">{{ colour }}</option>
+				</select>
+			</div>
+			<div class="product_option">
+				<span class="semibold upper dark"> Size </span> <br>
+				<select class="selector" id="selected_size">
+				  <option ng-repeat="size in $ctrl.product.sizes" value="{{size}}">{{ size }}</option>
+				</select>
+			</div>
+			<div class="product_option">
+				<span class="semibold upper dark"> Qty </span> <br>
+				<div id="qty_box">
+					<input type="number" class="selector" id="selected_quantity" ng-model="$ctrl.selected_quantity">
+					<div class="qty_button selector" id="qty_up" ng-click="$ctrl.setQty('+')"> + </div>
+					<div class="qty_button selector" id="qty_down" ng-click="$ctrl.setQty('-')"> - </div>
+				</div>
+			</div>
+		<div class="cleaner"></div>
+		</div>
+		
+		<div id="product_buttons">
+			<div class="product_button" id="button_cart" ng-click="$ctrl.addToCart();"> 
+				<img src="img/cart.png" alt="cart">
+				Add to cart 
+			</div>
+			<div class="product_button" id="button_lookbook"> 
+				<img src="img/heart.png" alt="heart icon">
+				Add to lookbook 
+			</div>
+		</div>
+	</div>
+	<div class="cleaner"></div>
+	
+	
+	
+	<div id="more_info">
+		<ul id="more_info_tabs">
+			<li id="description_tab" ng-click="$ctrl.setDesc('description')"> 
+				<h3>Description</h3> 
+			</li>
+			<li id="video_tab" ng-click="$ctrl.setDesc('video')"> 
+				<h3>Video</h3> 
+			</li>
+			<li id="specs_tab" ng-click="$ctrl.setDesc('specs')"> 
+				<h3>Size & specs</h3> 
+			</li>
+			<li id="delivery_tab" ng-click="$ctrl.setDesc('delivery')"> 
+				<h3>Delivery & returns</h3> 
+			</li>
+			<li id="reviews_tab" ng-click="$ctrl.setDesc('reviews')"> 
+				<h3>Reviews</h3> 
+			</li>
+		</ul>
+		<div id="more_info_content">
+			<div id="description_content" class="more_info_box" ng-bind-html="$ctrl.product.description"> </div>
+			<div id="video_content" class="more_info_box" ng-bind-html="$ctrl.product.video"> </div>
+			<div id="specs_content" class="more_info_box" ng-bind-html="$ctrl.product.specs"> </div>
+			<div id="delivery_content" class="more_info_box"> delivery details </div>
+			<div id="reviews_content" class="more_info_box"> 
+				<div class="full_review" ng-repeat="review in $ctrl.product.reviews">
+					<div class="review_header">
+						<div class="star_rating">
+							<div ng-style="{'width': (review.rating*20)+'%'}"></div>
+							<img src="img/star_rating.png">
+						</div>
+						by {{ review.author }} 
+						<span class="date">{{ review.date }} </span>
+					</div>
+					<div class="review_content" ng-bind-html="review.content"> </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+<div class="cleaner"></div>
+</div>

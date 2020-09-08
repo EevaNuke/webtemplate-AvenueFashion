@@ -13,35 +13,63 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular-sanitize.min.js"></script>
 	
     <script src="app.module.js"></script>
     <script src="app.config.js"></script>
-    <script src="home-page/home-page.module.js"></script>
-    <script src="home-page/home-page.component.js"></script>
-    <script src="home-page/home-banner.component.js"></script>
+    <script src="whole-page.controller.js"></script>
+    <script src="homepage/homepage.module.js"></script>
+    <script src="homepage/homepage.component.js"></script>
+    <script src="homepage-banner/homepage-banner.module.js"></script>
+    <script src="homepage-banner/homepage-banner.component.js"></script>
+    <script src="subpage-banner/subpage-banner.module.js"></script>
+    <script src="subpage-banner/subpage-banner.component.js"></script>
+    <script src="product-page/product-page.module.js"></script>
+    <script src="product-page/product-page.component.js"></script>
 	
 	<!--<script type="text/javascript" language="javascript" src="scripts.js"></script> -->
 	<title> Avenue Fashion </title>
 	<link rel="stylesheet" href="style-core.css">
+	<link rel="stylesheet" href="style-homepage-and-banner.css">
+	<link rel="stylesheet" href="style-subpage-and-banner.css">
+	<link rel="stylesheet" href="style-product_page.css">
 	<!--<link rel="stylesheet" href="style-tablet.css">
 	<link rel="stylesheet" href="style-mobile.css">-->
 	<style type="text/css">
 	</style>
 </head>
-<body>
+<body ng-controller="WholePageController">
 
 <header>
 <div id="topbar_bgr">
 	<div id="topbar_box">
-		<div class="left"> Currency: GBP <div class="arrow_down"></div> </div>
+		<div class="left" id="currency_box"> 
+			Currency: {{ currency }} <div class="arrow_down"></div> 
+			<ul id="currency_choice">
+				<li ng-click="currency = 'GBP'" ng-init="currency='GBP'"> GBP </li>
+				<li ng-click="currency = 'USD'"> USD </li>
+			</ul>
+		</div>
 		
-		<div id="cart""> 
+		<div id="cart"> 
 			<img src="img/cart.png" alt="shopping cart">
-			<span id="cart_label">empty</span>
+			<span id="cart_label">
+				<span ng-if="cart.length==0">empty</span>
+				<span ng-if="cart.length>0">{{ cart.length }} item<span ng-if="cart.length>1">s</span></span>
+			</span>
 			<img src="img/arrow_down_white.png" alt="white arrow">
 			
 			<div id="sub_cart">
-				<h3> Your cart is empty </h3>
+				<h3 ng-if="cart.length==0"> Your cart is empty </h3>
+				<ul>
+					<li ng-repeat="product in cart">
+						<img ng-src="{{ product.img }}" alt="{{ product.name }}">
+						{{ product.name }} x{{ product.quantity }} 
+						<span ng-if="currency=='GBP'">&pound;</span> 
+						<span ng-if="currency=='USD'">$</span> 
+						{{ product.price[currency] }} 
+					</li>
+				</ul>
 			</div>
 		</div>
 		
@@ -166,6 +194,8 @@
 </div>
 <div class="cleaner"></div>
 </header>
+
+<div class="cleaner" style="height: 1px"></div>
 
 <main ng-view></main>
 

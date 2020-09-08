@@ -1,0 +1,204 @@
+/* CSS file */
+
+/* -----------------------------
+	- general
+	- slider
+	- description
+	- more info
+----------------------------- */
+
+
+#product_page { 
+	width: 1170px; 
+	margin: 0 auto; padding: 80px 0;
+	color: #9a9a9a; 
+  }
+
+
+.star_rating, .star_rating div { height: 15px; }
+.star_rating { 
+	width: 74px; 
+	background: #dfdfdf; 
+	position: relative; 
+	display: inline-block;
+  }
+	
+	.star_rating div { background: #ded3aa; }
+	.star_rating img { position: absolute; top: 0; left: 0; }
+
+
+/* ------------------------------------------------------------
+							slider 
+------------------------------------------------------------ */
+
+	#big_image_box { 
+		width: 570px; height: 710px;
+		margin: 0 30px 20px 0;
+		float: left; 
+		position: relative; 
+		overflow: hidden; 
+	  }
+	
+		#slider_content {  }
+			#slider_content .slider_image_box { 
+				width: 570px; height: 710px;
+				display: table-cell; 
+				text-align: center; vertical-align: middle;
+			  }
+			
+				#slider_content img { max-width: 100%; max-height: 100%; }
+	
+		.slider_arrow { 
+			cursor: pointer;
+			position: absolute; 
+			top: 50%; 
+			padding: 10px 14px;
+			background: none; color: #000;
+			font-size: 40px; font-weight: bold;
+			text-align: center; 
+		  }
+			.slider_arrow:hover { background: #00c8c8; color: #fff; }
+		#slider_arrow_left { left: 0; }
+		#slider_arrow_right { right: 0; }
+
+	
+/* ------------------------------------------------------------
+						description 
+------------------------------------------------------------ */
+
+	#product_details { width: 570px; float: right; }
+
+	#product_socials { margin: 30px 0 25px; }
+	
+	
+		/* -------------- star rating --------------- */
+		
+		#product_rating { float: left; }
+	
+	
+		/* ------------- other socials -------------- */
+	
+		#product_socials .inline_element { margin: 0 10px; font-family: Montserrat; }
+		
+		#product_socials .inline_element img { margin: 0 5px; vertical-align: middle; }
+	
+	
+		/* ----------------- prices ----------------- */
+		
+	#product_prices { margin-bottom: 30px; font-size: 28px; font-family: Montserrat; }
+		
+		#product_prices .currency { vertical-align: super; font-size: 60%; }
+		
+		#product_prices .previous_price { margin-right: 30px; text-decoration: line-through; }
+	
+	
+		/* ------------- specs, details -------------- */
+		
+		#product_specs p { margin-bottom: 15px; }
+		
+	#short_desc { margin: 30px 0; line-height: 1.6; }
+
+		#short_desc ul { list-style-type: disc; margin-top: 10px; margin-left: 30px; }
+	
+	
+		/* ------------- product options -------------- */
+		
+		#product_options .product_option { float: left; margin-right: 30px; }
+	
+		.product_option .selector { 
+			height: 35px; 
+			margin-top: 10px; padding: 0 8px;
+			background: #2d71f0; color: #fff; 
+			border: none;
+		  }
+		  
+		.product_option select { width: 170px; }
+			.product_option select option { height: 20px; }
+		
+		.product_option #qty_box { 
+			position: relative; 
+			text-align: center; 
+		  }
+		
+			.product_option input { width: 35px; float: left; text-align: right; }
+				.product_option input::-webkit-outer-spin-button,
+				.product_option input::-webkit-inner-spin-button {
+					-webkit-appearance: none;
+					margin: 0;
+				  }
+				.product_option input[type=number] {
+					-moz-appearance: textfield;
+				  }
+		
+			.product_option .qty_button { 
+				cursor: pointer;
+				width: 35px; height: 18px; 
+				padding: 0;
+				border-left: 1px solid #fff; border-bottom: 1px solid #fff;
+				float: right; clear: right;
+			  }
+			#qty_box :last-child { margin-top: 0; }
+	
+	
+		/* ----------------- buttons ----------------- */
+
+		.product_button {
+			cursor: pointer;
+			margin-top: 60px;
+			padding: 20px 30px;
+			background: #cfcfcf;
+			color: #fff;
+			font-family: Montserrat;
+			font-weight: 600; 
+			text-transform: uppercase;
+			text-align: center;
+			letter-spacing: 3px;
+		  }
+			.product_button:hover { background: #00c8c8 !important; }
+		
+			.product_button img { display: inline; vertical-align: middle; margin-right: 2px; }
+		
+		#button_cart { background: #333; width: 240px; float: left; }
+		
+		#button_lookbook { background: #737373; width: 300px; float: right; }
+		
+	
+/* ------------------------------------------------------------
+							more info 
+------------------------------------------------------------ */
+
+	#more_info { width: 100%; line-height: 1.6; }
+
+		#more_info ul { background: #f8f8f8; }
+		
+			#more_info ul li { 
+				cursor: pointer;
+				display: inline-block; 
+				padding: 15px 35px;
+			  }
+			#more_info li:hover { background: #cfcfcf; }
+			
+				#more_info_tabs li.active { background: #333; color: #fff; }
+					#more_info_tabs li.active h3 { color: #fff; }
+
+			
+				.more_info_box {
+					display: none;
+					width: 100%;
+					padding: 25px 20px;
+				  }	
+				#more_info_content .active { display: block; }
+	
+					.more_info_box p { margin: 12px 0; }
+	
+	
+		/* ------------- product options -------------- */
+		
+		.full_review { margin-bottom: 15px; }
+		
+		.full_review .review_header { padding: 8px 10px; font-weight: bold; }
+
+			.review_header .date { color: #cfcfcf; }
+		
+		.full_review .review_content { background: #f8f8f8; padding: 8px 10px; }
+	

@@ -16,10 +16,18 @@ html { scroll-behavior: smooth; }
 	  }
 	.cleaner { width: 0; height: 0; margin: 0; padding: 0; clear: both; }
 	
+	input, select { font-family: Roboto; font-size: 14px; }
+	input:focus { outline: none; }
+	
 	div, p, ul, ol, li, h1, h2, h3, header, main, footer { margin: 0; padding: 0; }
 	#topbar_box, #header_box, #footer_box, #copyright_box { margin: 0 auto; padding: 0; }
 	
-	main { position: relative; }
+	h1, h2, h3, h4 { 
+		color: #575153; 
+		font-family: Montserrat; 
+		font-weight: 600; 
+		text-transform: uppercase; 
+	  }
 	
 	a { color: #727272; text-decoration: none; }
 		a:hover { color: #00c8c8; }
@@ -29,6 +37,11 @@ html { scroll-behavior: smooth; }
 	.right { float: right; }
 	
 	.bold { font-weight: bold; }
+	.semibold { font-weight: 600; }
+	.thin { font-weight: normal; }
+	.upper { text-transform: uppercase; font-family: Montserrat; }
+	.dark { color: #575153; }
+	.colored { color: #00c8c8; }
 	
 	
 	.arrow_down {
@@ -42,8 +55,7 @@ html { scroll-behavior: smooth; }
 		.column h3 { 
 			margin-bottom: 20px; 
 			color: #575153;
-			font-family: Montserrat; font-size: 12px;
-			text-transform: uppercase; 
+			font-size: 12px;
 		  }
 	
 		.column li { padding: 7px 0; }
@@ -63,6 +75,12 @@ html { scroll-behavior: smooth; }
 							header 
 ------------------------------------------------------------ */
 	
+header { 
+	width: 100%;
+	background: #fff;
+	position: fixed; z-index: 1000; 
+  }
+	
 		/* ----------------- top bar ----------------- */
 
 	#topbar_bgr { background: #333333; }
@@ -73,6 +91,22 @@ html { scroll-behavior: smooth; }
 		#topbar_box .right { margin-left: 35px; }
 		
 			#topbar_box .arrow_down { margin: 0 5px; }
+		
+		
+			#currency_box { position: relative; }
+				#currency_box:hover ul { display: block; }
+			
+				#currency_choice { 
+					width: 56px;
+					background: #333; 
+					padding-top: 5px;
+					position: absolute; 
+					right: 0;
+					display: none;
+				  }
+				
+				#currency_choice li { cursor: pointer; padding: 5px 8px; }
+		
 		
 			#cart { 
 				cursor: pointer;
@@ -94,8 +128,8 @@ html { scroll-behavior: smooth; }
 				
 				
 				#sub_cart {
-					width: 300px;
-					background: #f8f8f8;
+					min-width: 350px;
+					background: #f8f8f8; color: #575153;
 					padding: 30px;
 					position: absolute;
 					right: 0; top: 45px;
@@ -103,13 +137,11 @@ html { scroll-behavior: smooth; }
 					display: none; 
 				  }
 				
-					#sub_cart h3 { 
-						color: #575153;
-						font-family: Montserrat; font-size: 12px;
-						text-transform: uppercase; 
-					  }
+					#sub_cart h3 { margin: 15px; font-size: 12px; }
 				
 					#sub_cart li { padding: 7px 0; }
+					
+						#sub_cart li img { width: 50px; }
 
 
 		/* --------------- header box --------------- */

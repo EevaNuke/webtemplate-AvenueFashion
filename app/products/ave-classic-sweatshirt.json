@@ -1,0 +1,42 @@
+{
+	"id": "ave-classic-sweatshirt",
+	"img": [
+		"products/img/ave-classic-sweatshirt1.jpg", 
+		"products/img/ave-classic-sweatshirt2.jpg", 
+		"products/img/ave-classic-sweatshirt3.jpg" 
+	],
+	"name": "Ave Classic Sweatshirt",
+	"price": { "GBP": 89.99, "USD": 119.99 },
+	"discounted": true,
+	"previous_price": { "GBP": 107.00, "USD": 142.00 },
+	"rating": 4,
+	"reviews": [
+		{ 
+			"date": "10-08-2020 15:32",
+			"author": "Me", 
+			"rating": 4.5,
+			"content": "first rev <br> it may have several lines" 
+		}, 
+		{ 
+			"date": "10-08-2020 15:40",
+			"author": "Me Too", 
+			"rating": 4.5,
+			"content": "second rev" 
+		}, 
+		{ 
+			"date": "12-08-2020 15:32",
+			"author": "Me3", 
+			"rating": 3,
+			"content": "third rev" 
+		}
+	], 
+	"availability": "in stock",
+	"product_code": "#499577", 
+	"tags": [ "Classic", "Casual", "V-neck", "Loose" ], 
+	"short_desc": "Quisque dapibus lectus non malesuada sollicitudin. Etiam ultricies justo at quam vehicula interdum. Ut sagittis, diam vitae dapibus volutpat, tortor risus dapibus lectus. Ut sagittis, diam vitae dapibus volutpat, tortor risus dapibus lectus <br> <ul> <li>Elasticated cuffs</li><li>Casual fit</li><li>100% cotton</li> <li>Free shipping with 4 days delivery</li> </ul>", 
+	"colours": [ "black", "white" ],
+	"sizes": [ "M", "L" ], 
+	"description": "<h3>Proin porta ipsum vitae justo dignissim consequat. </h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque erat velit, tempus eu nisl eu, gravida hendrerit elit. Fusce pretium nulla ligula. In sapien lectus, fermentum auctor rhoncus et, porttitor et magna. Phasellus rutrum viverra facilisis. In ultricies ullamcorper rutrum. Donec pulvinar ligula in quam finibus efficitur quis a quam. Praesent fermentum ligula turpis, vel accumsan velit tempus nec. </p> <p>Curabitur elementum, libero at commodo cursus, ex orci consequat ipsum, id auctor lectus turpis ac sem. Nulla nec blandit mauris. Suspendisse varius tincidunt fermentum. In sapien eros, porta ac justo in, facilisis pulvinar velit. Suspendisse vestibulum posuere molestie. Quisque lorem ante, aliquet vitae orci vel, imperdiet elementum dui. Nullam sit amet mattis tortor, non euismod odio. </p>", 
+	"video": "some video content", 
+	"specs": "tab with sizes"
+}

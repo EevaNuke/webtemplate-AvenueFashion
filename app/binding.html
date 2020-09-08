@@ -1,0 +1,50 @@
+<html>
+<head>
+</head>
+<body ng-app="app">
+
+  <h1>Html</h1>
+  <parent>
+  </parent>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+  
+  <script type="text/javascript">
+    var app = angular.module("app", []);
+    app.component("parent", {
+      template : "<h1>Parent</h1><button ng-click='controller.show()'>Show</button><child></child>",
+      controllerAs : "controller",
+      binding : {
+        data : "="
+      },
+      controller : [function() {
+        var controller = this;
+        
+        controller.show = function() {
+          alert(JSON.stringify(data));
+        };
+		
+		controller.parentknows = "this";
+      }
+      ]
+    });
+    
+    app.component("child", {
+      template : "<h2>Child</h2><textarea ng-model='controller.model.stuff'></textarea><div>{{ $parent.controller.parentknows }}</div>",
+      controllerAs : "controller",
+      binding : {
+        data : "="
+      },
+      controller : [function() {
+        var controller = this;
+        
+        controller.model = {
+          stuff : "text"
+          };
+        data = controller.model;
+      }
+      ]
+      });
+  </script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 angular.
-module('homePage').
-component('homePage', {
-	templateUrl: 'home-page/home-page.template.html',
+module('homepage').
+component('homepage', {
+	templateUrl: 'homepage/homepage.template.html',
 	controller: ['$http', function PhoneListController($http) {
 		this.name = "world";
 		

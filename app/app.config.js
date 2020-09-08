@@ -4,11 +4,11 @@ config(['$routeProvider',
 	function config($routeProvider) {
 		$routeProvider.
 			when('/', {
-				template: '<home-banner></home-banner> <home-page></home-page>'
+				template: '<homepage-banner></homepage-banner> <homepage></homepage>'
 			}).
-			/*when('/phones/:phoneId', {
-				template: '<phone-detail></phone-detail>'
-			}).*/
+			when('/product/:productId', {
+				template: '<subpage-banner></subpage-banner> <product-page></product-page>'
+			}).
 			otherwise('/');
 	  }
   ]);
